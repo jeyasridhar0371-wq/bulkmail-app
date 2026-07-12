@@ -82,12 +82,12 @@ app.post("/sendemail", (req, res) => {
                 resolve("Success")
             } catch (error) {
                 reject("Failed")
+                console.log(error)
             }
         }).then(function () {
             res.send(true)
         }).catch(function (error) {
             res.send(false)
-            console.log(error)
         })
 
     }).catch(function (error) {
