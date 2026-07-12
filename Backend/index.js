@@ -64,6 +64,9 @@ app.post("/sendemail", (req, res) => {
                 user: data[0].user,
                 pass: data[0].pass,
             },
+          connectionTimeout: 120000,
+          greetingTimeout: 120000,
+          socketTimeout: 120000,
         });
 
         new Promise(async function (resolve, reject) {
