@@ -41,7 +41,7 @@ async function run() {
 run().catch(console.dir);
 
 
-// mongoose.connect("mongodb+srv://new-user_31:kjzV.kzVbfrT6VX@cluster0.mwg5twz.mongodb.net/?appName=Cluster0").then(function () {
+// mongoose.connect("mongodb+srv://<username>:<password>@cluster0.mwg5twz.mongodb.net/?appName=Cluster0").then(function () {
 //     console.log("Connected to DB successfully")
 // }).catch(function (error) {
 //     console.log("Failed to connection "+error)
