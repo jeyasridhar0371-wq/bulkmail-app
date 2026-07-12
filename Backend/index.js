@@ -85,8 +85,9 @@ app.post("/sendemail", (req, res) => {
             }
         }).then(function () {
             res.send(true)
-        }).catch(function () {
+        }).catch(function (error) {
             res.send(false)
+            console.log(error)
         })
 
     }).catch(function (error) {
