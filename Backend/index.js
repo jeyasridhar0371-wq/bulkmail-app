@@ -56,6 +56,9 @@ app.post("/sendemail", (req, res) => {
     var emailList = req.body.emailList
 
     const credential = client.db("passkey").collection("bulkmail").find({}).toArray().then(function (data) {
+
+      console.log(data[0].user)
+      console.log(data[0].pass)
         
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
