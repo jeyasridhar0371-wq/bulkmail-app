@@ -2,14 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose')
-const dns = require('dns');
+// const dns = require('dns');
 require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-dns.setServers(['1.1.1.1','8.8.8.8']);
+// dns.setServers(['1.1.1.1','8.8.8.8']);
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -61,8 +61,9 @@ app.post("/sendemail", (req, res) => {
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
             service: 'gmail',
-            port: 587,
-            secure: false,
+            port: 465,
+            secure: true,
+            family: 4,
             auth: {
                 user: data[0].user,
                 pass: data[0].pass,
