@@ -50,7 +50,7 @@ run().catch(console.dir);
 // const credential = mongoose.model("credential", {}, "bulkmail")
 
 
-app.post("/sendemail", (req, res) => {
+app.post("/sendemail", async (req, res) => {
 
     var msg = req.body.msg
     var emailList = req.body.emailList
@@ -69,6 +69,12 @@ app.post("/sendemail", (req, res) => {
                 pass: data[0].pass,
             },
         });
+      try {
+  await transporter.verify();
+  console.log("Server is ready to take our messages");
+} catch (err) {
+  console.error("Verification failed:", err);
+}
 
         new Promise(async function (resolve, reject) {
             try {
