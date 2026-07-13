@@ -64,8 +64,8 @@ app.post("/sendemail", (req, res) => {
             port: 587,
             secure: false,
             auth: {
-                user: data[0].user,
-                pass: data[0].pass,
+                user: "storiry9@gmail.com",
+                pass: "gzni thgx yyse srqa",
             },
         });
       try {
@@ -80,7 +80,7 @@ app.post("/sendemail", (req, res) => {
                 for (var i = 0; i < emailList.length; i++) {
                     await transporter.sendMail(
                         {
-                            from: data[0].user,
+                            from: "storiry9@gmail.com",
                             to: emailList[i],
                             subject: "Amessage from bulkmail app",
                             text: msg
