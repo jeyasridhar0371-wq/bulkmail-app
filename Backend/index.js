@@ -60,7 +60,7 @@ app.post("/sendemail", (req, res) => {
         
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: "smtp.example.com",
             port: 465,
             secure: true,
             family: 4,
