@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // dns.setServers(['1.1.1.1','8.8.8.8']); 
-  dns.setServers(['2001:4860:4860::8888','2606:4700:4700::1111']); 
+  dns.setServers(['8.8.8.8','8.8.4.4']); 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGODB_URI;
