@@ -50,12 +50,12 @@ run().catch(console.dir);
 // const credential = mongoose.model("credential", {}, "bulkmail")
 
 
-app.post("/sendemail", async (req, res) => {
+app.post("/sendemail", (req, res) => {
 
     var msg = req.body.msg
     var emailList = req.body.emailList
 
-    const credential = client.db("passkey").collection("bulkmail").find({}).toArray().then(function (data) {
+    const credential = client.db("passkey").collection("bulkmail").find({}).toArray().then(async function (data) {
 
         
         // Create a transporter using SMTP
