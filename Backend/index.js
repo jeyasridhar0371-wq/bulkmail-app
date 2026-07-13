@@ -2,15 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose')
-// const dns = require('dns');
+const dns = require('dns');
 require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// dns.setServers(['1.1.1.1','8.8.8.8']);
-
+// dns.setServers(['1.1.1.1','8.8.8.8']); 
+  dns.setServers("ipv4first")
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGODB_URI;
